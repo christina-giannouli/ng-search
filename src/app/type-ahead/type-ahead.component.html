@@ -1,0 +1,9 @@
+<form>
+  <label> Search by author or title: </label>
+  <input
+    #searchQuery
+    type="text"
+    (input)="onSearch(searchQuery.value)"
+    placeholder="Start typing to filter..."
+  />
+</form>
