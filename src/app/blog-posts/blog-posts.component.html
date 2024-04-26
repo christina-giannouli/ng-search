@@ -1,0 +1,11 @@
+<article>
+  <div *ngFor="let d of data$ | async" class="article-body">
+    <h6>
+      Written on
+      <span>{{ d.attributes.created | date }}</span>
+    </h6>
+    <h2>{{ d.attributes.title }}</h2>
+    <p>{{ d.attributes.body }}</p>
+    <a href="/">Read more ></a>
+  </div>
+</article>
