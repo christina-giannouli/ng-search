@@ -10,7 +10,7 @@ import {
   Observable
 } from 'rxjs';
 import { BlogPostsService } from './blog-posts/blog-posts.service';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { BlogPost, PostData } from './blog-posts/blog-post.interface';
 import { NgIf } from '@angular/common';
 
@@ -22,7 +22,10 @@ import { NgIf } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  constructor(private blogPostsService: BlogPostsService) {}
+  constructor(
+    private blogPostsService: BlogPostsService,
+    private router: Router
+  ) {}
   title = 'ng-search';
   isLoading: boolean = false;
 
@@ -51,5 +54,7 @@ export class AppComponent implements OnInit {
   filterBlogPosts(keyword: string) {
     this.isLoading = true;
     this.searchQuery$.next(keyword);
+
+    this.router.navigate([], { queryParams: { search: keyword } });
   }
 }
