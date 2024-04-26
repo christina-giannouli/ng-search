@@ -12,12 +12,11 @@ import {
 import { BlogPostsService } from './blog-posts/blog-posts.service';
 import { Router, RouterOutlet } from '@angular/router';
 import { BlogPost, PostData } from './blog-posts/blog-post.interface';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BlogPostsComponent, TypeAheadComponent, NgIf],
+  imports: [RouterOutlet, BlogPostsComponent, TypeAheadComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

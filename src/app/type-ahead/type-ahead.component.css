@@ -1,0 +1,27 @@
+form {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  top: 51%;
+  right: calc(100% - 270px);
+  width: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+        farthest-side,
+        var(--accent-color) 94%,
+        var(--primary-color)
+      )
+      top/5px 5px no-repeat,
+    conic-gradient(var(--primary-color) 30%, var(--accent-color));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
